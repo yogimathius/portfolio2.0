@@ -1,10 +1,10 @@
 import React from 'react';
+import PrimaryButton from '../../PrimaryButton';
 
 const HeroButton = () => {
   return (
-    <div>
-      
-    </div>
+    <PrimaryButton>About Me</PrimaryButton>
+
   );
 };
 

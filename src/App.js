@@ -29,8 +29,8 @@ function App() {
   const { state, createService, deleteService } = useApplicationData();
   return (
     <MuiThemeProvider theme={theme}>
-
-      <div className="App font-body relative container mx-auto">
+      <div className="App bg-light-grey font-body">
+      <div className=" relative container mx-auto ">
         <Router>
           <Navigation />
           <ScrollToTop />
@@ -56,6 +56,8 @@ function App() {
           <Footer />
         </Router>
       </div>
+      </div>
+
     </MuiThemeProvider>
   );
 }

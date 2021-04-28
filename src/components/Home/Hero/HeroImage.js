@@ -1,9 +1,13 @@
 import React from 'react';
+import HeroText from './HeroText';
 
 const HeroImage = () => {
   return (
-    <div>
-      
+    <div className="bg-hero bg-cover bg-center h-screen relative">
+      <div className="absolute bottom-0">
+
+        <HeroText />
+      </div>
     </div>
   );
 };

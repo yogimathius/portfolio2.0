@@ -1,13 +1,10 @@
 import React from 'react';
-import PrimaryButton from '../../PrimaryButton';
-import SecondaryButton from '../../SecondaryButton';
+import HeroButton from './HeroButton';
+import HeroImage from './HeroImage';
 
 const index = () => {
   return (
-    <div>
-      <PrimaryButton>About Me</PrimaryButton>
-      <SecondaryButton>Contact Me</SecondaryButton>
-    </div>
+    <HeroImage />
   );
 };
 
