@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      borderWidth: {
+        '1': '1px'
+      },
       colors: {
         'cyan': '#5FB4A2',
         'dark-blue': '#203A4C',
@@ -13,8 +16,6 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'hero': "url('/src/assets/images/hero.svg')",
-        // 'footer-logo': "url('/src/assets/images/footerlogo.png')",
-        // 'call-to-action': "url('/src/assets/images/DSC_6880.jpg')"
        }),
        fontFamily: {
         'body': ['Public Sans', 'serif'],
