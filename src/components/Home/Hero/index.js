@@ -1,10 +1,12 @@
 import React from 'react';
-import Button from '../../Button';
+import PrimaryButton from '../../PrimaryButton';
+import SecondaryButton from '../../SecondaryButton';
 
 const index = () => {
   return (
     <div>
-      <Button primary>Test</Button>
+      <PrimaryButton>About Me</PrimaryButton>
+      <SecondaryButton>Contact Me</SecondaryButton>
     </div>
   );
 };

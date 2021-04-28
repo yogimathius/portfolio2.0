@@ -1,11 +1,11 @@
 import React from "react";
 
 
-export default function Button(props) {
+export default function PrimaryButton(props) {
 
   return (
     <button
-      className={`btn btn-primary hover:bg-cyan fill-cyan group`}
+      className={`btn btn-primary`}
       onClick={props.onClick}
       disabled={props.disabled}
     >

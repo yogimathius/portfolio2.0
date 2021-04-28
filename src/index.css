@@ -18,20 +18,30 @@
 
 @layer utilities {
 	.btn {
-			@apply flex items-center space-x-2 pr-4 font-semibold tracking-widest rounded-lg border-2 cursor-pointer text-center no-underline object-contain uppercase;
+			@apply flex items-center  font-bold tracking-widest  cursor-pointer rounded text-center no-underline object-contain uppercase group;
 	}
 
 	.btn-primary,
 	.btn-primary:visited {
-		@apply text-white bg-dark-blue;
+		@apply space-x-2 pr-4 text-white bg-dark-blue;
 	}
-	/* .btn-primary:hover,
+	.btn-primary:hover,
 	.btn-primary:visited:hover {
-		@apply bg-white;
-	} */
-	.btn-secondary {
-		@apply bg-white ;
+		@apply bg-cyan;
 	}
+	.btn-secondary,
+	.btn-secondary:visited {
+		@apply bg-white border-2 border-solid border-black py-2 px-3;
+	}
+	.btn-secondary:hover,
+	.btn-secondary:visited:hover {
+		@apply bg-black text-white;
+	}
+
+	.btn-disabled {
+		@apply opacity-30 cursor-not-allowed;
+	}
+
 	.icon-lightArrowDown:before {
 		content: "\e900";
 	}
