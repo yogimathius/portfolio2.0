@@ -1,6 +1,6 @@
 import React from "react";
 import CallToAction from "./CallToAction";
-import Values from "./Values";
+import About from "./About/index.js";
 import Hero from "./Hero";
 import LazyLoad from 'react-lazyload';
 
@@ -11,7 +11,7 @@ function Home(businessData) {
       <div className="">
         <Hero />
         <LazyLoad height={200}>
-          <Values />
+          <About />
         </LazyLoad>
 
         <LazyLoad height={200}>

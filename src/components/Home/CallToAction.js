@@ -4,7 +4,7 @@ import SecondaryButton from '../SecondaryButton';
 const CallToAction = ({titles}) => {
 
   return (
-    <div className="flex justify-between mb-4">
+    <div className="flex justify-between mb-4 py-24">
       <h3 className="font-bold text-4xl w-1/4">
         Interested in doing a project together?
       </h3> 
