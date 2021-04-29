@@ -9,7 +9,7 @@ export default function useApplicationData() {
 
   // RETRIEVES API AND SETS IT WITH REDUCER
   useEffect(() => {
-      axios.get("/api/services").then((res) => {
+      axios.get("/api/projects").then((res) => {
         const businessData = res.data;
       dispatch({
         type: SET_APPLICATION_DATA,
