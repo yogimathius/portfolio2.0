@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SecondaryButton from '../SecondaryButton';
 
-const CallToAction = ({titles}) => {
+const CallToAction = () => {
 
   return (
     <div className="flex justify-between mb-4 py-24">
@@ -10,9 +11,9 @@ const CallToAction = ({titles}) => {
       </h3> 
       <div className="border-b-1 border-solid border-gray-300 w-1/3 mb-8"></div>
       <div className="flex justify-end items-center">
-        <div>
+        <Link to="/contact">
           <SecondaryButton>Contact Me</SecondaryButton>
-          </div> 
+        </Link> 
       </div>
      
     </div>
