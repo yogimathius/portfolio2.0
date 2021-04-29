@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useApplicationData from "../../hooks/useApplicationData";
+import LoadingScreen from '../LoadingScreen';
 import PortfolioListItem from './PortfolioListItem';
 
 const PortfolioList = () => {
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 800)
+  }, [])
+
   const { state } = useApplicationData();
   const projects = state.businessData;
 
@@ -10,8 +18,14 @@ const PortfolioList = () => {
     return <PortfolioListItem key={index} project={project} />
   })
   return (
+    
     <div>
-      {renderedProjects}
+    {loading === false ? (
+      <div>
+      {renderedProjects}</div>
+      ) : 
+        <LoadingScreen />
+      }
     </div>
   );
 };

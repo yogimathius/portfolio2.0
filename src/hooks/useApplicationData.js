@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
 import axios from 'axios'
-import reducer, { SET_APPLICATION_DATA, SET_SERVICE } from '../reducers/application'
+import reducer, { SET_APPLICATION_DATA, SET_PROJECT } from '../reducers/application'
 
 export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, {
@@ -18,34 +18,32 @@ export default function useApplicationData() {
     });
   }, []);
 
-    // BOOKS INTERVIEW
-    function createService(serviceId, updatedService) {
-      const url = `/api/services/`;
-      const promise = axios.put(url, { updatedService }).then(() => {
-        dispatch({
-          type: SET_SERVICE,
-          id: serviceId,
-          updatedService
-        });
-      })
-      return promise;
-    }
-  
-    // CANCELS AN INTERVIEW
-    const deleteService = (appointmentId, interview) => {
-      const url = `/api/appointments`;
-      const promise = axios.delete(url).then((res) => {
-        dispatch({
-          type: SET_SERVICE,
-          id: appointmentId,
-          interview: null,
-          days: state.days,
-        });
+  function createProject(projectId, updatedProject) {
+    const url = `/api/projects`;
+    const promise = axios.put(url, { updatedProject }).then(() => {
+      dispatch({
+        type: SET_PROJECT,
+        id: projectId,
+        updatedProject
       });
-      return promise;
-    };
+    })
+    return promise;
+  }
+  
+  const deleteProject = (appointmentId, interview) => {
+    const url = `/api/projects`;
+    const promise = axios.delete(url).then((res) => {
+      dispatch({
+        type: SET_PROJECT,
+        id: appointmentId,
+        interview: null,
+        days: state.days,
+      });
+    });
+    return promise;
+  };
 
   return {
-    state, createService, deleteService
+    state, createProject, deleteProject
   };
 }

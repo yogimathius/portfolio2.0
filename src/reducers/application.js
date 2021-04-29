@@ -1,5 +1,5 @@
 const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
-const SET_SERVICE = "SET_SERVICE";
+const SET_PROJECT = "SET_PROJECT";
 // REDUCER INCLUDES SETTING POINTS
 export default function reducer(state, action) {
   switch (action.type) {
@@ -14,7 +14,7 @@ export default function reducer(state, action) {
         businessData
       };
 
-    case SET_SERVICE: {
+    case SET_PROJECT: {
       const { updatedService } = action;
 
       const removedState = state.businessData.map((service) => {
@@ -38,5 +38,5 @@ export default function reducer(state, action) {
 }
 
 export {
-  SET_APPLICATION_DATA, SET_SERVICE
+  SET_APPLICATION_DATA, SET_PROJECT
 };
