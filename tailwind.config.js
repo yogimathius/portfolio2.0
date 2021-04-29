@@ -14,6 +14,9 @@ module.exports = {
         'light-grey-text': '#EAEAEB',
         'bright-red': '#F43030'
       },
+      height: {
+        '85-screen': '85vh'
+      },
       backgroundImage: theme => ({
         'hero': "url('/src/assets/images/hero.svg')",
        }),

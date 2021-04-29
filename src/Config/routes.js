@@ -2,6 +2,7 @@ import ContactPage from '../pages/Contact'
 import HomePage from '../pages/Home.js'
 import Login from '../components/Login/Login';
 import Portfolio from '../pages/Portfolio';
+import ProjectDetails from '../pages/ProjectDetails';
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
   {
     path: '/portfolio',
     component: Portfolio,
+    isPrivate: false,
+  },
+  {
+    path: '/project/:id',
+    component: ProjectDetails,
     isPrivate: false,
   }
 ];

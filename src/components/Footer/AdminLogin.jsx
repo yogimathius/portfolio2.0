@@ -18,7 +18,7 @@ const AdminLogin = () => {
     fire.auth().signOut()
   };
 
-  console.log("logged in is: ", isLoggedIn);
+  // console.log("logged in is: ", isLoggedIn);
 
   return (
     <div className="absolute right-0 bottom-3 mr-2 flex justify-end text-gray-dk-blue hover:text-white font-bold text-xs">

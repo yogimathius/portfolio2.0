@@ -76,14 +76,9 @@ export default function DropDown() {
             <ListItemText primary="Home" />
           </StyledMenuItem>
         </Link>
-        <Link to="/offerings">
+        <Link to="/portfolio">
           <StyledMenuItem onClick={handleClose}>
-            <ListItemText primary="Offerings" />
-          </StyledMenuItem>
-        </Link>
-        <Link to='/about'>
-          <StyledMenuItem onClick={handleClose}>
-            <ListItemText primary="About" />
+            <ListItemText primary="Portfolio" />
           </StyledMenuItem>
         </Link>
         <Link to='/contact'>

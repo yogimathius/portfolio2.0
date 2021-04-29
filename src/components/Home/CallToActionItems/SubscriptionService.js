@@ -14,7 +14,7 @@ const SubscriptionService = () => {
       setBtnValue('Submit')
     }, (error) => {
       setBtnValue('Submit')
-      console.log(error.text);
+      console.error(error.text);
     });
     e.target.reset()
   }

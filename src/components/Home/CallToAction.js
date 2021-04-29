@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import SecondaryButton from '../SecondaryButton';
 
 const CallToAction = () => {
@@ -11,9 +10,7 @@ const CallToAction = () => {
       </h3> 
       <div className="border-b-1 border-solid border-gray-300 w-1/3 mb-8"></div>
       <div className="flex justify-end items-center">
-        <Link to="/contact">
-          <SecondaryButton>Contact Me</SecondaryButton>
-        </Link> 
+        <SecondaryButton target="_self" link='/contact'>Contact Me</SecondaryButton>
       </div>
      
     </div>

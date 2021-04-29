@@ -7,7 +7,6 @@ import useApplicationData from "./hooks/useApplicationData";
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import ScrollToTop from "./helpers/ScrollToTop";
 
-console.log(routes);
 const theme = createMuiTheme({
   palette: {
     primary: {

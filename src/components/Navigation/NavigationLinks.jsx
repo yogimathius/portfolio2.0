@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const NavigationLinks = (props) => {
   const textColor = props.colorStyle
-  console.log('color: ', textColor, props);
-    return (
+
+  return (
            
       <div className={`text-2xl hidden lg:flex items-start justify-end z-50 mt-3 ${textColor}`}>
         <div className="flex flex-wrap space-x-4 z-50">
