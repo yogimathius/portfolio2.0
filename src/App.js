@@ -30,8 +30,8 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App bg-light-grey font-body">
-      <div className=" relative container mx-auto ">
         <Router>
+      <div className=" relative container mx-auto ">
           <Navigation />
           <ScrollToTop />
             <Switch>
@@ -53,9 +53,9 @@ function App() {
                 />
               ))}
             </Switch>
-          {/* <Footer /> */}
-        </Router>
       </div>
+          <Footer />
+        </Router>
       </div>
 
     </MuiThemeProvider>

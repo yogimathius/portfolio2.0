@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const NavigationLinks = () => {
-
-
+const NavigationLinks = (props) => {
+  const textColor = props.colorStyle
+  console.log('color: ', textColor, props);
     return (
            
-      <div className={`col-start-3 text-2xl p-12 hidden lg:flex items-start justify-end z-50 mt-3`}>
+      <div className={`text-2xl hidden lg:flex items-start justify-end z-50 mt-3 ${textColor}`}>
         <div className="flex flex-wrap space-x-4 z-50">
 
           {/* NAVIGATION LINKS */}

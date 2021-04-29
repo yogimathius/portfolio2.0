@@ -4,13 +4,16 @@ import SecondaryButton from '../SecondaryButton';
 const CallToAction = ({titles}) => {
 
   return (
-    <div className=" grid md:grid-cols-2">
-      <h3 className="col-start-1  text-4xl">
+    <div className="flex justify-between mb-4">
+      <h3 className="font-bold text-4xl w-1/4">
         Interested in doing a project together?
       </h3> 
-    <div className="flex justify-end"> 
-        <SecondaryButton>Contact Me</SecondaryButton>
-    </div>
+      <div className="border-b-1 border-solid border-gray-300 w-1/3 mb-8"></div>
+      <div className="flex justify-end items-center">
+        <div>
+          <SecondaryButton>Contact Me</SecondaryButton>
+          </div> 
+      </div>
      
     </div>
   );
