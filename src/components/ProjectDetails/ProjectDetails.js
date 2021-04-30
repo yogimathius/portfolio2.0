@@ -43,13 +43,14 @@ const ProjectDetails = () => {
   const prevProject = projectKeys[projectKeys.indexOf(currentPageId)- 1]
   const nextProject = projectKeys[projectKeys.indexOf(currentPageId) + 1]
 
-  console.log(currentProject);
   return (
     <div>
       <ProjectImage projectImage={projectImage} title={title} />
-      <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
-      <ProjectBackground background={background} />
-      <ProjectPreviews previews={previews} />
+      <div className="grid grid-cols-3">
+        <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
+        <ProjectBackground background={background} />
+        <ProjectPreviews previews={previews} />
+      </div>
       <div className="flex">
         <PrevProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={prevProject} />
         <NextProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={nextProject} />
