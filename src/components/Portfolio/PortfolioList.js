@@ -4,6 +4,7 @@ import useApplicationData from "../../hooks/useApplicationData";
 import LoadingScreen from '../LoadingScreen';
 import PortfolioListItem from './PortfolioListItem';
 import projectsContext from '../../App';
+import CallToAction from '../CallToAction';
 
 const PortfolioList = () => {
   const projectsStore = projectsContext()
@@ -29,7 +30,9 @@ const PortfolioList = () => {
     <div>
     {loading === false ? (
       <div>
-      {renderedProjects}</div>
+        {renderedProjects}
+        <CallToAction />
+      </div>
       ) : 
         <LoadingScreen />
       }
