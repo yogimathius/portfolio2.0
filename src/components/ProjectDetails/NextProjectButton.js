@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { convertKabab } from '../../helpers/convertKabab';
-import arrowRight from '../../assets/icons/arrow-right.svg'
+import arrowRight from '../../assets/icons/arrow-right.svg';
+
 const NextProjectButton = ({pageId, onPrevOrNextClicked}) => {
   const title = convertKabab(pageId)
   console.log(title);

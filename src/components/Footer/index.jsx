@@ -1,4 +1,5 @@
 import React from "react";
+import CallToAction from "../CallToAction.js";
 import NavigationLinks from "../Navigation/NavigationLinks";
 import AdminLogin from "./AdminLogin";
 import FooterLogo from "./FooterLogo";
@@ -7,6 +8,9 @@ import SocialMediaIcons from "./SocialMediaIcons";
 function Footer() {
   return (
     <div className="footer">
+      {/* <div className="container mx-auto">
+        <CallToAction />
+      </div> */}
       <footer className="relative py-6 bg-gray-dk-blue my-2 space-y-4 md:space-y-0   auto-rows-min ">
         <div className="container mx-auto flex justify-between">
           <div className="flex">

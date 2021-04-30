@@ -1,5 +1,5 @@
 import React from "react";
-import CallToAction from "./CallToAction";
+import CallToAction from "../CallToAction.js";
 import About from "./About/index.js";
 import Hero from "./Hero";
 import LazyLoad from 'react-lazyload';

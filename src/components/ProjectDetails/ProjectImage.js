@@ -8,7 +8,7 @@ const ProjectImage = ({projectImage, title}) => {
     backgroundRepeat: 'no-repeat',
   }
   return (
-    <div style={bgStyle} className="h-85-screen transform scale-90">
+    <div style={bgStyle} className="h-85-screen mb-12">
 
     </div>
   );

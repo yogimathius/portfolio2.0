@@ -45,8 +45,9 @@ const ProjectDetails = () => {
   const background = currentProject.text_body_background;
   const previews = currentProject.previewimages;
   const projectKeys = projectObj.projectKeys
-  const prevProject = projectKeys[projectKeys.indexOf(currentPageId)- 1]
-  const nextProject = projectKeys[projectKeys.indexOf(currentPageId) + 1]
+
+  let prevProject = projectKeys[projectKeys.indexOf(currentPageId)- 1] ? projectKeys[projectKeys.indexOf(currentPageId)- 1] : projectKeys[projectKeys.length- 1]
+  let nextProject = projectKeys[projectKeys.indexOf(currentPageId) + 1] ? projectKeys[projectKeys.indexOf(currentPageId) + 1] : projectKeys[0]
 
   return (
     <div>
@@ -58,14 +59,14 @@ const ProjectDetails = () => {
           <ProjectBackground background={background} />
           <ProjectPreviews previews={previews} />
         </div>
-        <div className="flex">
+        <div className="flex mt-12">
           <PrevProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={prevProject} />
           <NextProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={nextProject} />
         </div>
       </div>
       ) :
       <LoadingScreen />
-    }
+      }
     </div>
   );
 };
