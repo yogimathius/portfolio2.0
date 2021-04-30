@@ -7,12 +7,17 @@ import { loadState } from '../../helpers/localStorage';
 import PrevProjectButton from './PrevProjectButton';
 import NextProjectButton from './NextProjectButton';
 import projectsContext from '../../App'
+import LoadingScreen from '../LoadingScreen';
 
 const ProjectDetails = () => {
   const projectObj = loadState()
   const [currentProject, setProject] = useState([]);
   const [currentPageId, setPageId] = useState([]);
+  const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000)
+  }, [])
 
   
   const projectsStore = projectsContext()
@@ -45,16 +50,22 @@ const ProjectDetails = () => {
 
   return (
     <div>
-      <ProjectImage projectImage={projectImage} title={title} />
-      <div className="grid grid-cols-5">
-        <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
-        <ProjectBackground background={background} />
-        <ProjectPreviews previews={previews} />
+      {loading === false ? (
+      <div>
+        <ProjectImage projectImage={projectImage} title={title} />
+        <div className="grid grid-cols-5">
+          <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
+          <ProjectBackground background={background} />
+          <ProjectPreviews previews={previews} />
+        </div>
+        <div className="flex">
+          <PrevProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={prevProject} />
+          <NextProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={nextProject} />
+        </div>
       </div>
-      <div className="flex">
-        <PrevProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={prevProject} />
-        <NextProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={nextProject} />
-      </div>
+      ) :
+      <LoadingScreen />
+    }
     </div>
   );
 };

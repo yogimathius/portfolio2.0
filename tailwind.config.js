@@ -15,10 +15,11 @@ module.exports = {
         'bright-red': '#F43030'
       },
       height: {
+        '75-screen': '75vh',
         '85-screen': '85vh'
       },
       backgroundImage: theme => ({
-        'hero': "url('/src/assets/images/hero.svg')",
+        'hero': "url('/src/assets/images/header-background.jpg')",
        }),
        fontFamily: {
         'body': ['Public Sans', 'serif'],

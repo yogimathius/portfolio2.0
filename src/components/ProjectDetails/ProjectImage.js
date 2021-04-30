@@ -4,7 +4,7 @@ const ProjectImage = ({projectImage, title}) => {
   const bgStyle = {
     backgroundImage: `url("${projectImage}")`,
     backgroundSize: 'cover', 
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
   }
   return (
