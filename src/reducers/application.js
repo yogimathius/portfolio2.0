@@ -9,6 +9,7 @@ export default function reducer(state, action) {
         businessData
       } = action;
 
+      
       return {
         ...state,
         businessData

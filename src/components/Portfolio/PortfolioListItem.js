@@ -11,12 +11,13 @@ const PortfolioListItem = ({project}) => {
   const id = project.id;
   const imageColumn = id % 2 === 0 ? "2" : "1"
   const textColumn = id % 2 === 0 ? "1" : "2"
-
-  const projectNames = loadState()
+  console.log(pageId);
+  const projectKeys = loadState()
   const stateObj = {
-    project, 
-    projectNames
+    pageId, 
+    projectKeys
   }
+  
   return (
     <div className="grid grid-cols-2 my-12">
       <div className={`row-start-1 col-start-${imageColumn} flex justify-center items-center`}>

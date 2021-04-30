@@ -24,40 +24,47 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
-  const { state, createService, deleteService } = useApplicationData();
-  return (
-    <MuiThemeProvider theme={theme}>
-      <div className="App bg-light-grey font-body">
-        <Router>
-      <div className=" relative container mx-auto ">
-          <Navigation />
-          <ScrollToTop />
-            <Switch>
-              <Route exact path = '/'
-                render={() => {
-                  return (
-                    <Redirect to ="/home"/>
-                  )
-                }} />
-              {routes.map((route) => (
-                <AppRoute
-                  key={route.path}
-                  path={route.path}
-                  component={route.component}
-                  isPrivate={route.isPrivate}
-                  state={state}
-                  createService={createService}
-                  deleteService={deleteService}
-                />
-              ))}
-            </Switch>
-      </div>
-          <Footer />
-        </Router>
-      </div>
+export const projectsContext = React.createContext('')
 
-    </MuiThemeProvider>
+function App() {
+  const { state } = useApplicationData();
+  const projects = state.businessData
+  
+  return (
+    <projectsContext.Provider value={projects}>
+
+      <MuiThemeProvider theme={theme}>
+        <div className="App bg-light-grey font-body">
+          <Router>
+        <div className=" relative container mx-auto ">
+            <Navigation />
+            <ScrollToTop />
+              <Switch>
+                <Route exact path = '/'
+                  render={() => {
+                    return (
+                      <Redirect to ="/home"/>
+                    )
+                  }} />
+                {routes.map((route) => (
+                  <AppRoute
+                    key={route.path}
+                    path={route.path}
+                    component={route.component}
+                    isPrivate={route.isPrivate}
+                    state={state}
+                    // createService={createService}
+                    // deleteService={deleteService}
+                  />
+                ))}
+              </Switch>
+        </div>
+            <Footer />
+          </Router>
+        </div>
+
+      </MuiThemeProvider>
+    </projectsContext.Provider>
   );
 }
 

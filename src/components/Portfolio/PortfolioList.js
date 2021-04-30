@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { saveState } from '../../helpers/localStorage';
 import useApplicationData from "../../hooks/useApplicationData";
 import LoadingScreen from '../LoadingScreen';
 import PortfolioListItem from './PortfolioListItem';
+import projectsContext from '../../App';
 
 const PortfolioList = () => {
-
+  console.log(projectsContext);
+  const projectsStore = projectsContext()
+  const projects = projectsStore.props.value;
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 800)
+    setTimeout(() => setLoading(false), 1000)
   }, [])
 
-  const { state } = useApplicationData();
-  const projects = state.businessData;
+  // const { state } = useApplicationData();
+  // const projects = state.businessData;
 
-  const projectNames = []
-  const renderedProjects = projects.map((project, index) => {
-    projectNames.push(project.page_id)
+  const projectKeys = Object.keys(projects)
+  const renderedProjects = projectKeys.map((projectKey, index) => {
+    const project = projects[projectKey]
     return <PortfolioListItem key={index} project={project} />
   })
-
-  saveState(projectNames)
+  
+  saveState(projectKeys)
   return (
     
     <div>

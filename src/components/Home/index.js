@@ -5,7 +5,6 @@ import Hero from "./Hero";
 import LazyLoad from 'react-lazyload';
 
 function Home(businessData) {
-  let titles = businessData.props.map(service => service.title);
   return (
     <div>
       <div className="">
@@ -15,7 +14,7 @@ function Home(businessData) {
         </LazyLoad>
 
         <LazyLoad height={200}>
-          <CallToAction titles={titles} />
+          <CallToAction />
         </LazyLoad>
       </div>
     </div>
