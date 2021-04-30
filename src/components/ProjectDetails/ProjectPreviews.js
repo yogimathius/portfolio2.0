@@ -3,14 +3,15 @@ import React from 'react';
 const ProjectPreviews = ({previews}) => {
   if(previews?.length === 1) {
     return (
-      <img className="col-start-2 col-span-2" src={previews[0]} alt="project preview"></img>
+      <img className="col-start-3 col-span-3" src={previews[0]} alt="project preview"></img>
     )
   }
   const renderedPreviews = previews?.map((preview, index) => {
     return <img src={preview} alt="project preview"></img>
   })
   return (
-    <div className="col-start-2 col-span-2">
+    <div className="col-start-3 col-span-3">
+      <h3 className="text-4xl mb-16">Project Previews</h3>
       {renderedPreviews}
     </div>
   );

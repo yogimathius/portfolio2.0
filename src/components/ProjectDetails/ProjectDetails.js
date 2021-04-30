@@ -46,7 +46,7 @@ const ProjectDetails = () => {
   return (
     <div>
       <ProjectImage projectImage={projectImage} title={title} />
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-5">
         <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
         <ProjectBackground background={background} />
         <ProjectPreviews previews={previews} />
