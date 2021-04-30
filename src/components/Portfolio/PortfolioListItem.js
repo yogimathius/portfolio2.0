@@ -11,7 +11,6 @@ const PortfolioListItem = ({project}) => {
   const id = project.id;
   const imageColumn = id % 2 === 0 ? "2" : "1"
   const textColumn = id % 2 === 0 ? "1" : "2"
-  console.log(pageId);
   const projectKeys = loadState()
   const stateObj = {
     pageId, 

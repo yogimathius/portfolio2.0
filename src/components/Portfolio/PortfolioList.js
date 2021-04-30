@@ -6,7 +6,6 @@ import PortfolioListItem from './PortfolioListItem';
 import projectsContext from '../../App';
 
 const PortfolioList = () => {
-  console.log(projectsContext);
   const projectsStore = projectsContext()
   const projects = projectsStore.props.value;
   const [loading, setLoading] = useState(true)
