@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ProjectImage from './ProjectImage';
 import ProjectSummary from './ProjectSummary';
-// import ProjectBackground from './ProjectBackground';
-// import ProjectPreviews from './ProjectPreviews';
+import ProjectBackground from './ProjectBackground';
+import ProjectPreviews from './ProjectPreviews';
 import { loadState } from '../../helpers/localStorage';
 import PrevProjectButton from './PrevProjectButton';
 import NextProjectButton from './NextProjectButton';
@@ -17,12 +17,10 @@ const ProjectDetails = () => {
   
   const projectsStore = projectsContext()
   const projects = projectsStore.props.value;
-  console.log(projects);
   const pageId = projectObj.pageId;
   useEffect(() => {
     setPageId(pageId)
   }, [pageId])
-  console.log('project ', projectObj.pageId);
   
   const onPrevOrNextClicked = (pageIdRequested) => {
     setPageId(pageIdRequested)
@@ -34,26 +32,25 @@ const ProjectDetails = () => {
   }, [currentPageId, projects])
 
 
-  console.log('current Project: ', currentProject);
   if (!currentProject) { return null}
-  // const id = project.id;
   const projectImage = currentProject.image_url;
   const projectUrl = currentProject.project_url;
   const title = currentProject.title;
   const description = currentProject.text_body;
-
+  const background = currentProject.text_body_background;
+  const previews = currentProject.previewimages;
   const projectKeys = projectObj.projectKeys
-  // console.log(projectKeys, currentPageId);
   const prevProject = projectKeys[projectKeys.indexOf(currentPageId)- 1]
   const nextProject = projectKeys[projectKeys.indexOf(currentPageId) + 1]
 
-  // console.log(prevProject, nextProject);
   return (
     <div>
       <ProjectImage projectImage={projectImage} title={title} />
-      <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
-      {/* <ProjectBackground /> */}
-      {/* <ProjectPreviews /> */}
+      <div className="grid grid-cols-3">
+        <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
+        <ProjectBackground background={background} />
+        <ProjectPreviews previews={previews} />
+      </div>
       <div className="flex">
         <PrevProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={prevProject} />
         <NextProjectButton onPrevOrNextClicked={onPrevOrNextClicked} pageId={nextProject} />

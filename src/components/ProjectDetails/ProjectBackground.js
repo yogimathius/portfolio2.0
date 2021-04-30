@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ProjectBackground = () => {
+const ProjectBackground = ({background}) => {
   return (
-    <div>
-      
+    <div className="col-span-2">
+      {background}
     </div>
   );
 };
