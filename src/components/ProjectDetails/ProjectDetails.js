@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProjectImage from './ProjectImage';
 import ProjectSummary from './ProjectSummary';
 import ProjectBackground from './ProjectBackground';

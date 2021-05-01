@@ -1,6 +1,5 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { saveState } from '../../helpers/localStorage';
-import useApplicationData from "../../hooks/useApplicationData";
 import LoadingScreen from '../LoadingScreen';
 import PortfolioListItem from './PortfolioListItem';
 import projectsContext from '../../App';

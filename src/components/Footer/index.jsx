@@ -1,5 +1,4 @@
 import React from "react";
-import CallToAction from "../CallToAction.js";
 import NavigationLinks from "../Navigation/NavigationLinks";
 import AdminLogin from "./AdminLogin";
 import FooterLogo from "./FooterLogo";
