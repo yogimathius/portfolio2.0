@@ -18,7 +18,7 @@ function Footer() {
             <NavigationLinks colorStyle="text-white" />
 
           </div>
-          <SocialMediaIcons />
+          <SocialMediaIcons color="white" />
         </div>
         <AdminLogin />
       </footer>

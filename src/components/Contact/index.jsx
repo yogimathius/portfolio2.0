@@ -5,6 +5,7 @@ import NameInput from './NameInput';
 import SubjectInput from './SubjectInput';
 // import axios from 'axios';
 import emailjs, { init } from 'emailjs-com';
+import GetInTouch from './GetInTouch';
 
 init("user_rivxf7OIBzCWd9dlHiDrz");
 
@@ -63,21 +64,24 @@ const Contact = () => {
   }
 
   return (
-    <div className="flex justify-center my-12 mx-8 md-mx-0">
-      <form className="w-full max-w-5xl" onSubmit={(e) => sendEmail(e)}>  
-        <NameInput firstName={firstName} lastName={lastName} onFirstNameChange={onFirstNameChange} onLastNameChange={onLastNameChange}/>
-        <EmailInput email={email} onEmailChange={onEmailChange}/>
-        <SubjectInput subject={subject} onSubjectChange={onSubjectChange} />
-        <MessageInput message={message} onMsgChange={onMsgChange} />
-        <div className="md:flex md:items-center">
-          <div className="md:w-1/3">
-            <button className="btn btn-primary shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded" type="button" onClick={(e) => sendEmail(e)}>
-              Send
-            </button>
+    <div>
+      <GetInTouch />
+      <div className="flex justify-center my-12">
+        <form className="w-full" onSubmit={(e) => sendEmail(e)}>  
+          <NameInput firstName={firstName} lastName={lastName} onFirstNameChange={onFirstNameChange} onLastNameChange={onLastNameChange}/>
+          <EmailInput email={email} onEmailChange={onEmailChange}/>
+          <SubjectInput subject={subject} onSubjectChange={onSubjectChange} />
+          <MessageInput message={message} onMsgChange={onMsgChange} />
+          <div className="md:flex md:items-center">
+            <div className="md:w-1/3">
+              <button className="btn btn-primary shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded" type="button" onClick={(e) => sendEmail(e)}>
+                Send
+              </button>
+            </div>
+            <div className="md:w-2/3"></div>
           </div>
-          <div className="md:w-2/3"></div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
