@@ -5,18 +5,18 @@ import faLinkedin from '../../assets/icons/linkedin.svg';
 
 const SocialMediaIcons = ({color}) => {
   return (
-    <div className={`space-x-4 md:space-x-1 flex justify-center items-center text-${color}`}>
-    <a target="_blank" rel="noreferrer" href="https://www.instagram.com/sovereign.birth/">
-      <img className="" src={faGithub} alt="github icon"></img>
-    </a>
-    <a href="mailto:info@SovereignBirth.ca"  >
-      <img className="" src={faTwitter} alt="twitter ico"></img>
+    <div className={`space-x-4 flex justify-center items-center text-${color}`}>
+      <a target="_blank" rel="noreferrer" href="https://www.github.com/mathiusjohnson">
+        <img className="" src={faGithub} alt="github icon"></img>
+      </a>
+      <a href="https://twitter.com/mathius_johnson"  >
+        <img className="" src={faTwitter} alt="twitter icon"></img>
 
-    </a>
-    <a target="_blank" rel="noreferrer" href="https://www.facebook.com/SovereignBirth">
-      <img src={faLinkedin} alt="linkedin icon"></img>
-    </a>
-  </div>
+      </a>
+      <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/mathius-johnson/">
+        <img src={faLinkedin} alt="linkedin icon"></img>
+      </a>
+    </div>
   );
 };
 
