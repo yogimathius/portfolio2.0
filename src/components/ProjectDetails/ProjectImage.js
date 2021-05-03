@@ -4,11 +4,11 @@ const ProjectImage = ({projectImage, title}) => {
   const bgStyle = {
     backgroundImage: `url("${projectImage}")`,
     backgroundSize: 'cover', 
-    backgroundPosition: 'center center',
+    backgroundPosition: 'left center',
     backgroundRepeat: 'no-repeat',
   }
   return (
-    <div style={bgStyle} className="h-85-screen mb-12">
+    <div style={bgStyle} className="h-75-screen lg:h-85-screen mb-12">
 
     </div>
   );

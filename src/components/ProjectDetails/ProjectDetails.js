@@ -50,11 +50,11 @@ const ProjectDetails = () => {
   let nextProject = projectKeys[projectKeys.indexOf(currentPageId) + 1] ? projectKeys[projectKeys.indexOf(currentPageId) + 1] : projectKeys[0]
 
   return (
-    <div>
+    <div className="mx-4 md:mx-0">
       {loading === false ? (
       <div>
         <ProjectImage projectImage={projectImage} title={title} />
-        <div className="grid grid-cols-5">
+        <div className="md:grid grid-cols-5">
           <ProjectSummary title={title} description={description} projectUrl={projectUrl} />
           <ProjectBackground background={background} />
           <ProjectPreviews previews={previews} />

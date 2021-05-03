@@ -10,8 +10,8 @@ const ProjectPreviews = ({previews}) => {
     return <img src={preview} alt="project preview"></img>
   })
   return (
-    <div className="col-start-3 col-span-3">
-      <h3 className="text-4xl mb-16">Project Previews</h3>
+    <div className="lg:col-start-3 col-span-5 lg:col-span-3">
+      <h3 className="text-4xl mb-8 lg:mb-16">Static Previews</h3>
       {renderedPreviews}
     </div>
   );
