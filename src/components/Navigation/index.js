@@ -9,11 +9,11 @@ function Navigation() {
   return (
 
     <nav className="">
-      <div id="overlay" className="z-10 flex justify-between py-8 mb-6">
-        <div className="flex justify-center ml-4 mt-12 lg:hidden">
+      <div id="overlay" className="z-10 flex justify-between py-8 mx-12 md:mx-0 mb-6">
+        <NavigationLogo colorStyle="text-black" />
+        <div className="md:hidden">
           <DropDown  />
         </div>
-        <NavigationLogo colorStyle="text-black" />
         <NavigationLinks />
       </div> 
     </nav>

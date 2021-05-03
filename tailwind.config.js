@@ -20,8 +20,8 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'hero': "url('/src/assets/images/header-background.jpg')",
-       }),
-       fontFamily: {
+      }),
+      fontFamily: {
         'body': ['Public Sans', 'serif'],
         'header': ['Ibarra Real Nova', 'sans-serif']
       },

@@ -3,7 +3,7 @@ import HeroText from './HeroText';
 
 const HeroImage = () => {
   return (
-    <div className="bg-hero bg-cover bg-center h-screen relative">
+    <div className="bg-hero bg-cover bg-center h-75-screen md:h-screen relative">
       <div className="absolute bottom-0">
 
         <HeroText />
