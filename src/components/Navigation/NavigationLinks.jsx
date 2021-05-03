@@ -6,7 +6,7 @@ const NavigationLinks = (props) => {
 
   return (
            
-      <div className={`text-2xl hidden lg:flex items-start justify-end z-50 mt-3 ${textColor}`}>
+      <div className={`text-2xl hidden md:flex items-start justify-end z-50 mt-3 ${textColor}`}>
         <div className="flex flex-wrap space-x-4 z-50">
 
           {/* NAVIGATION LINKS */}

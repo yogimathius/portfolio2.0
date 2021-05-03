@@ -18,13 +18,13 @@ const PortfolioListItem = ({project}) => {
   }
   
   return (
-    <div className="grid grid-cols-2 my-12">
+    <div className="md:grid md:grid-cols-2 my-12">
       <div className={`row-start-1 col-start-${imageColumn} flex justify-center items-center`}>
         <img className="" src={projectImage} alt={title}></img>
       </div>
       <div className={`row-start-1 col-start-${textColumn} flex flex-col justify-between mx-12`}>
         <div className="border-b-1 border-solid border-gray-300"></div>
-        <div className="flex flex-col space-y-12">
+        <div className="flex flex-col space-y-12 my-12 xl:my-0">
           <h2 className="text-4xl font-bold">{title}</h2>
           <p>{description}</p>
           <SecondaryButton onClick={() => saveState(stateObj)} target="_self" link={`/project/${pageId}`}>View Project</SecondaryButton>

@@ -51,7 +51,7 @@ export default function DropDown() {
   };
 
   return (
-    <div className="flex justify-center ml-4 md:mt-12 lg:hidden">
+    <div className="flex justify-center md:hidden">
       <div>
 
       <Button
