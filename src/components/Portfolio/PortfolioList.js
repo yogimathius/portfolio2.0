@@ -27,7 +27,7 @@ const PortfolioList = () => {
   return (
     
     <div>
-    {loading === false ? (
+    {renderedProjects.length > 0 ? (
       <div>
         {renderedProjects}
         <CallToAction />
