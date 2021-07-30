@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { saveState } from '../../helpers/localStorage';
 import LoadingScreen from '../LoadingScreen';
 import PortfolioListItem from './PortfolioListItem';
@@ -8,11 +8,11 @@ import CallToAction from '../CallToAction';
 const PortfolioList = () => {
   const projectsStore = projectsContext()
   const projects = projectsStore.props.value;
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
-  }, [])
+  // useEffect(() => {
+  //   setTimeout(() => setLoading(false), 1000)
+  // }, [])
 
   // const { state } = useApplicationData();
   // const projects = state.businessData;
