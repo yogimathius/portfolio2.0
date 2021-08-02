@@ -46,7 +46,7 @@ const Contact = () => {
       message
     }
 
-    emailjs.send('service_xcnmobs', 'template_p1nhl97', messageDetails)
+    emailjs.send('service_d5hlzw7', 'template_hlrzfln', messageDetails)
       .then((result) => {
           alert("Message Sent."); 
           resetForm()
