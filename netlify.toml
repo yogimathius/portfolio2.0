@@ -14,3 +14,8 @@
 [build.environment]
   REACT_APP_API_BASE_URL = "https://portfolio-mathius.herokuapp.com/"
   REACT_APP_WEBSOCKET_URL = "wss://portfolio-mathius.herokuapp.com/"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
