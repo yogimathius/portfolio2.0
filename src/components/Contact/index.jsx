@@ -7,7 +7,7 @@ import SubjectInput from './SubjectInput';
 import emailjs, { init } from 'emailjs-com';
 import GetInTouch from './GetInTouch';
 
-init("user_rivxf7OIBzCWd9dlHiDrz");
+init("user_8MpnZ33kDRAuQaBFXueiA");
 
 const Contact = () => {
   const [firstName, setFirstName] = useState('')
