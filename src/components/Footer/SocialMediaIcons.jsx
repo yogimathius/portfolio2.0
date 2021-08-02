@@ -9,7 +9,7 @@ const SocialMediaIcons = ({color}) => {
       <a target="_blank" rel="noreferrer" href="https://www.github.com/mathiusjohnson">
         <img className="" src={faGithub} alt="github icon"></img>
       </a>
-      <a href="https://twitter.com/mathius_johnson"  >
+      <a target="_blank" rel="noreferrer" href="https://twitter.com/mathius_johnson"  >
         <img className="" src={faTwitter} alt="twitter icon"></img>
 
       </a>
