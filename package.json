@@ -54,5 +54,5 @@
     ]
   },
   "devDependencies": {},
-  "proxy": "https://portfolio-mathius.herokuapp.com/"
+  "proxy": "https://portfolio-api-production-f222.up.railway.app/"
 }
