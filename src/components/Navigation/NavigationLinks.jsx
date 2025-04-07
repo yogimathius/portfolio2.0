@@ -1,32 +1,51 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
-const NavigationLinks = (props) => {
-  const textColor = props.colorStyle
+const NavigationLinks = ({ colorStyle }) => {
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
-           
-      <div className={`text-2xl hidden md:flex items-start justify-end z-50 mt-3 ${textColor}`}>
-        <div className="flex flex-wrap space-x-4 z-50">
+    <div
+      className={`hidden md:flex items-center space-x-8 ${
+        colorStyle || "text-dark dark:text-white"
+      }`}
+    >
+      <Link
+        className={`nav-link ${
+          isActive("/") ? "after:w-full text-primary dark:text-primary" : ""
+        }`}
+        to="/"
+      >
+        Home
+      </Link>
 
-          {/* NAVIGATION LINKS */}
-          <Link className="nav-link hover:opacity-70 active" to="/">
-            Home
-          </Link>
+      <Link
+        className={`nav-link ${
+          isActive("/portfolio")
+            ? "after:w-full text-primary dark:text-primary"
+            : ""
+        }`}
+        to="/portfolio"
+      >
+        Portfolio
+      </Link>
 
-          <Link className="nav-link hover:opacity-70" to="/portfolio">
-            Portfolio
-          </Link>
-
-
-          <Link className="nav-link hover:opacity-70" to="/contact">
-            Contact
-          </Link>
-
-        </div>
-      </div>
-
-    );
+      <Link
+        className={`nav-link ${
+          isActive("/contact")
+            ? "after:w-full text-primary dark:text-primary"
+            : ""
+        }`}
+        to="/contact"
+      >
+        Contact
+      </Link>
+    </div>
+  );
 };
 
 export default NavigationLinks;

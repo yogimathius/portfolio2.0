@@ -1,93 +1,97 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-
-const StyledMenu = withStyles({
-  paper: {
-    border: '1px solid #d3d4d5',
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
-    }}
-    transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
-    }}
-    {...props}
-  />
-));
-
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem);
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function DropDown() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const location = useLocation();
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const isActive = (path) => {
+    return location.pathname === path;
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   return (
-    <div className="flex justify-center md:hidden mt-5">
-      <div>
+    <div ref={dropdownRef} className="relative">
+      <button
+        aria-label="Menu"
+        className="p-2 text-dark dark:text-white focus:outline-none"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {isOpen ? (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          ) : (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          )}
+        </svg>
+      </button>
 
-      <Button
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
-        color="primary"
-        onClick={handleClick}
-      >
-      <FontAwesomeIcon className="text-white fa-2x" icon={faBars} /> 
-      </Button>
-      <StyledMenu
-      className="ml-4 mt-2"
-        id="customized-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <Link to="/">
-          <StyledMenuItem onClick={handleClose}>
-            <ListItemText primary="Home" />
-          </StyledMenuItem>
-        </Link>
-        <Link to="/portfolio">
-          <StyledMenuItem onClick={handleClose}>
-            <ListItemText primary="Portfolio" />
-          </StyledMenuItem>
-        </Link>
-        <Link to='/contact'>
-          <StyledMenuItem onClick={handleClose}>
-            <ListItemText primary="Contact" />
-          </StyledMenuItem>
-        </Link>
-      </StyledMenu>
-      </div>
+      {isOpen && (
+        <div className="absolute right-0 mt-2 w-48 py-2 bg-white dark:bg-gray-800 rounded-md shadow-xl z-50">
+          <Link
+            to="/"
+            className={`block px-4 py-2 text-sm ${
+              isActive("/")
+                ? "text-primary"
+                : "text-gray-dark dark:text-gray-light hover:text-primary dark:hover:text-primary"
+            }`}
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to="/portfolio"
+            className={`block px-4 py-2 text-sm ${
+              isActive("/portfolio")
+                ? "text-primary"
+                : "text-gray-dark dark:text-gray-light hover:text-primary dark:hover:text-primary"
+            }`}
+            onClick={() => setIsOpen(false)}
+          >
+            Portfolio
+          </Link>
+          <Link
+            to="/contact"
+            className={`block px-4 py-2 text-sm ${
+              isActive("/contact")
+                ? "text-primary"
+                : "text-gray-dark dark:text-gray-light hover:text-primary dark:hover:text-primary"
+            }`}
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

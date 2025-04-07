@@ -2,8 +2,13 @@
 
 @layer base {
   body {
-    @apply font-body;
+    @apply font-body bg-light text-dark transition-colors duration-200 ease-in-out;
   }
+
+  .dark body {
+    @apply bg-dark text-white;
+  }
+
   h1,
   h2,
   h3,
@@ -13,36 +18,118 @@
     @apply font-header;
   }
 }
+
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+
+  .section {
+    @apply py-12 md:py-24;
+  }
+
+  .form-input {
+    @apply appearance-none block w-full px-4 py-3 bg-gray-light dark:bg-gray-700 text-dark dark:text-white border border-gray-medium dark:border-gray-600 rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+
+  .nav-link {
+    @apply relative inline-block px-1 py-2 text-gray-dark dark:text-gray-light transition-colors duration-200 hover:text-primary dark:hover:text-primary;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 bottom-0 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
 @layer utilities {
-	.btn {
-			@apply flex items-center  font-bold tracking-widest  cursor-pointer  text-center no-underline object-contain uppercase group;
-	}
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-bold tracking-wider text-center uppercase transition-all duration-200 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
 
-	.btn-primary,
-	.btn-primary:visited {
-		@apply space-x-2 pr-4 text-white bg-dark-blue;
-	}
-	.btn-primary:hover,
-	.btn-primary:visited:hover {
-		@apply bg-cyan;
-	}
-	.btn-secondary,
-	.btn-secondary:visited {
-		@apply bg-white border-1 border-solid border-gray-dk-blue  py-2 px-3;
-	}
-	.btn-secondary:hover,
-	.btn-secondary:visited:hover {
-		@apply bg-gray-dk-blue border-gray-dk-blue  text-white;
-	}
+  .btn-primary,
+  .btn-primary:visited {
+    @apply text-white bg-primary hover:bg-primary-dark focus:ring-primary;
+  }
 
-	.btn-disabled {
-		@apply opacity-30 cursor-not-allowed;
-	}
+  .btn-secondary,
+  .btn-secondary:visited {
+    @apply bg-white text-dark border border-gray-dark hover:bg-gray-dark hover:text-white focus:ring-gray-dark dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700;
+  }
 
-	.icon-lightArrowDown:before {
-		content: "\e900";
-	}
+  .btn-accent,
+  .btn-accent:visited {
+    @apply text-white bg-secondary hover:bg-secondary-dark focus:ring-secondary;
+  }
+
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .toggle-checkbox:checked {
+    @apply right-0 border-primary;
+    right: 0;
+    border-color: #3b82f6;
+  }
+
+  .toggle-checkbox:checked + .toggle-label {
+    @apply bg-primary;
+    background-color: #3b82f6;
+  }
+
+  .icon-lightArrowDown:before {
+    content: "\e900";
+  }
+
+  /* Animation delay utilities */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  /* Masonry layout */
+  @screen lg {
+    .masonry-grid {
+      column-count: 3;
+      column-gap: 2rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @screen md {
+    .masonry-grid {
+      column-count: 2;
+    }
+  }
 }
